@@ -2,13 +2,13 @@ package main
 
 import (
 	"log"
+	"mygram/helpers"
 	"mygram/router"
-	"os"
 )
 
 func main() {
 	r := router.StartApp()
-	env := os.Getenv("ENV")
+	env := helpers.GetEnv("ENV")
 
 	// if env == "development" {
 	// 	log.Println("Server running on port :8080")
