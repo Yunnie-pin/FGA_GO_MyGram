@@ -1,7 +1,7 @@
 package main
 
 import (
-	"log"
+	"fmt"
 	"mygram/helpers"
 	"mygram/router"
 )
@@ -9,6 +9,7 @@ import (
 func main() {
 	r := router.StartApp()
 	env := helpers.GetEnv("ENV")
+	port := helpers.GetEnv("PORT")
 
 	// if env == "development" {
 	// 	log.Println("Server running on port :8080")
@@ -18,7 +19,7 @@ func main() {
 	// 	r.Run(":80")
 	// }
 
-	log.Print("ENV: ", env)
-	log.Println("Server running on port :8080")
-	r.Run(":8080")
+	fmt.Println("ENV: ", env)
+	fmt.Println("PORT: ", port)
+	r.Run(":" + port)
 }
