@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"mygram/database"
 	"mygram/router"
 	"os"
 
@@ -10,6 +11,7 @@ import (
 
 func main() {
 	godotenv.Load()
+	database.StartDB()
 	r := router.StartApp()
 
 	log.Println("ENV: ", os.Getenv("ENVIRONMENT_VARIABEL"))
