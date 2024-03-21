@@ -36,3 +36,22 @@ func (u *User) BeforeCreate(tx *gorm.DB) (err error) {
 	err = nil
 	return
 }
+
+func (u *User) BeforeUpdate(tx *gorm.DB) (err error) {
+
+	// validate age
+	if u.Age < 8 {
+		return errors.New("UMUR TIDAK BOLEH KURANG DARI 8 TAHUN")
+	}
+
+	if u.Email == "" {
+		return errors.New("EMAIL TIDAK BOLEH KOSONG")
+	}
+
+	if u.Username == "" {
+		return errors.New("USERNAME TIDAK BOLEH KOSONG")
+	}
+
+	err = nil
+	return
+}

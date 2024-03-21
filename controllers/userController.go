@@ -5,7 +5,9 @@ import (
 	"mygram/helpers"
 	"mygram/models"
 	"net/http"
+	"strconv"
 
+	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
 )
 
@@ -80,9 +82,52 @@ func UserLogin(c *gin.Context) {
 		return
 	}
 
-	token := helpers.GenerateToken(User.ID, User.Email)
+	token := helpers.GenerateToken(User.ID, User.Email, uint(User.Age), User.Username)
 
 	c.JSON(http.StatusOK, gin.H{
 		"token": token,
+	})
+}
+
+func UserUpdate(c *gin.Context) {
+	db := database.GetDB()
+
+	userData := c.MustGet("userData").(jwt.MapClaims)
+	contentType := helpers.GetContentType(c)
+	User := models.User{}
+
+	userId, _ := strconv.Atoi(c.Param("userId"))
+
+	userID := uint(userData["id"].(float64))
+	userAge := uint8(userData["age"].(float64))
+
+	if contentType == appJSON {
+		c.ShouldBindJSON(&User)
+	} else {
+		c.ShouldBind(&User)
+	}
+
+	User.ID = userID
+	User.Age = uint8(userAge)
+
+	err := db.Debug().Model(&User).Where("id = ?", userId).Updates(models.User{
+		Username: User.Username,
+		Email:    User.Email,
+	}).Error
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error":   "BAD REQUEST",
+			"message": err.Error(),
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"id":         User.ID,
+		"email":      User.Email,
+		"username":   User.Username,
+		"age":        User.Age,
+		"updated_at": User.UpdatedAt,
 	})
 }
