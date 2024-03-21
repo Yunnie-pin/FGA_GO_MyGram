@@ -22,6 +22,14 @@
         .red {
             color: red;
         }
+        .green
+        {
+            color: green;
+        }
+        .yellow
+        {
+            color: yellow;
+        }
         main {
             margin-top: 50px;
             max-width: 1000px;
@@ -98,6 +106,33 @@
                                             <td>string</td>
                                             <td>yes</td>
                                             <td>umur harus diatas 8</td>
+                                        </tr>
+                                    </table>
+                            </li>
+                            <li>
+                                <h3>Login</h3>
+                                    Route : <a href="/users/register">/users/login</a>
+                                    (<strong class="red">POST</strong>)
+                                    <br>
+                                    <p>Body :</p>
+                                    <table>
+                                        <tr>
+                                            <th>Field</th>
+                                            <th>Type</th>
+                                            <th>Required</th>
+                                            <th>Notes</th>
+                                        </tr>
+                                        <tr>
+                                            <td>email</td>
+                                            <td>string</td>
+                                            <td>yes</td>
+                                            <td>unique</td>
+                                        </tr>
+                                        <tr>
+                                            <td>password</td>
+                                            <td>string</td>
+                                            <td>yes</td>
+                                            <td>minimal panjang 6 karakter</td>
                                         </tr>
                                     </table>
                             </li>

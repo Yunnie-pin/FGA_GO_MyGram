@@ -46,7 +46,43 @@ func UserRegister(c *gin.Context) {
 }
 
 func UserLogin(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"message": "Ini adalah user login",
+	db := database.GetDB()
+	contentType := helpers.GetContentType(c)
+	_, _ = db, contentType
+	User := models.User{}
+	password := ""
+
+	if contentType == appJSON {
+		c.ShouldBindJSON(&User)
+	} else {
+		c.ShouldBind(&User)
+	}
+
+	password = User.Password
+
+	err := db.Debug().Where("email = ?", User.Email).Take(&User).Error
+
+	if err != nil {
+		c.JSON(http.StatusNotFound, gin.H{
+			"error":   "Unauthorized",
+			"message": "User not found",
+		})
+		return
+	}
+
+	comparePass := helpers.ComparePass([]byte(User.Password), []byte(password))
+
+	if !comparePass {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"error":   "Unauthorized",
+			"message": "Invalid password",
+		})
+		return
+	}
+
+	token := helpers.GenerateToken(User.ID, User.Email)
+
+	c.JSON(http.StatusOK, gin.H{
+		"token": token,
 	})
 }

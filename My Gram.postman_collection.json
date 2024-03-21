@@ -7,6 +7,60 @@
 	},
 	"item": [
 		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "email",
+						"value": "arifin@gmail.com",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "full_name",
+						"value": "Arifin Yunianta",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "password",
+						"value": "12345678",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "arifinn@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Register",
 			"request": {
 				"method": "POST",
@@ -31,18 +85,20 @@
 						},
 						{
 							"key": "username",
-							"value": "arifinnn2",
+							"value": "arifinnn",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://localhost:8080/users/register",
-					"protocol": "http",
+					"raw": "https://fgagomygram-production.up.railway.app/users/register",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"fgagomygram-production",
+						"up",
+						"railway",
+						"app"
 					],
-					"port": "8080",
 					"path": [
 						"users",
 						"register"
