@@ -6,7 +6,6 @@ import (
 	"mygram/models"
 	"os"
 
-	"github.com/joho/godotenv"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -19,15 +18,11 @@ var (
 	dbname   string
 	dburl    string
 	config   string
-
-	db *gorm.DB
+	err      error
+	db       *gorm.DB
 )
 
 func StartDB() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
 
 	host = os.Getenv("PG_HOST")
 	port = os.Getenv("PG_PORT")
