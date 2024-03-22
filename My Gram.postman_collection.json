@@ -7,6 +7,392 @@
 	},
 	"item": [
 		{
+			"name": "Photos",
+			"item": [
+				{
+					"name": "Create Photos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiY2lwdW5nQGdtYWlsLmNvbSIsImlkIjoxLCJ1c2VybmFtZSI6ImNpcHVuZyJ9.tsdDmWrz2JqqP42QhPlET158SVJEUeNlCPYuKBiSi0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Foto1",
+									"type": "text"
+								},
+								{
+									"key": "caption",
+									"value": "Ini foto 1",
+									"type": "text"
+								},
+								{
+									"key": "photo_url",
+									"value": "https://photo1.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/photos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"photos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Photos By User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiY2lwdW5nQGdtYWlsLmNvbSIsImlkIjoxLCJ1c2VybmFtZSI6ImNpcHVuZyJ9.RGxUkg_4L2nmj56dl9BB6PyM9TaxiOvxJo6dVFYb4BM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/photos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"photos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Photos All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiY2lwdW5nQGdtYWlsLmNvbSIsImlkIjoxLCJ1c2VybmFtZSI6ImNpcHVuZyJ9.RGxUkg_4L2nmj56dl9BB6PyM9TaxiOvxJo6dVFYb4BM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/photos/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"photos",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Photos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiY2lwdW5nQGdtYWlsLmNvbSIsImlkIjoxLCJ1c2VybmFtZSI6ImNpcHVuZyJ9.RGxUkg_4L2nmj56dl9BB6PyM9TaxiOvxJo6dVFYb4BM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/photos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"photos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Photos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiY2lwdW5nQGdtYWlsLmNvbSIsImlkIjoxLCJ1c2VybmFtZSI6ImNpcHVuZyJ9.RGxUkg_4L2nmj56dl9BB6PyM9TaxiOvxJo6dVFYb4BM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Foto1",
+									"type": "text"
+								},
+								{
+									"key": "caption",
+									"value": "Ini foto 1",
+									"type": "text"
+								},
+								{
+									"key": "photo_url",
+									"value": "https://photo1.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/photos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"photos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "Create Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiY2lwdW5nQGdtYWlsLmNvbSIsImlkIjoxLCJ1c2VybmFtZSI6ImNpcHVuZyJ9.RGxUkg_4L2nmj56dl9BB6PyM9TaxiOvxJo6dVFYb4BM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Foto1",
+									"type": "text"
+								},
+								{
+									"key": "caption",
+									"value": "Ini foto 1",
+									"type": "text"
+								},
+								{
+									"key": "photo_url",
+									"value": "https://photo1.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/comments?message=halo&photo_id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comments"
+							],
+							"query": [
+								{
+									"key": "message",
+									"value": "halo"
+								},
+								{
+									"key": "photo_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Comment By User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiY2lwdW5nQGdtYWlsLmNvbSIsImlkIjoxLCJ1c2VybmFtZSI6ImNpcHVuZyJ9.RGxUkg_4L2nmj56dl9BB6PyM9TaxiOvxJo6dVFYb4BM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Comment All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiY2lwdW5nQGdtYWlsLmNvbSIsImlkIjoxLCJ1c2VybmFtZSI6ImNpcHVuZyJ9.RGxUkg_4L2nmj56dl9BB6PyM9TaxiOvxJo6dVFYb4BM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comments/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comments",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Photos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiY2lwdW5nQGdtYWlsLmNvbSIsImlkIjoxLCJ1c2VybmFtZSI6ImNpcHVuZyJ9.RGxUkg_4L2nmj56dl9BB6PyM9TaxiOvxJo6dVFYb4BM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "message",
+									"value": "ini pesan update3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/comments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Photos Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiY2lwdW5nQGdtYWlsLmNvbSIsImlkIjoxLCJ1c2VybmFtZSI6ImNpcHVuZyJ9.RGxUkg_4L2nmj56dl9BB6PyM9TaxiOvxJo6dVFYb4BM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Login User",
 			"request": {
 				"method": "POST",
@@ -35,7 +421,7 @@
 					"urlencoded": [
 						{
 							"key": "email",
-							"value": "arifinn@gmail.com",
+							"value": "cipung@gmail.com",
 							"type": "text"
 						},
 						{
@@ -70,7 +456,7 @@
 					"urlencoded": [
 						{
 							"key": "email",
-							"value": "budi@gmail.com",
+							"value": "cipung@gmail.com",
 							"type": "text"
 						},
 						{
@@ -85,20 +471,18 @@
 						},
 						{
 							"key": "username",
-							"value": "budi",
+							"value": "cipung",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "https://fgagomygram-production.up.railway.app/users/register",
-					"protocol": "https",
+					"raw": "http://localhost:8080/users/register",
+					"protocol": "http",
 					"host": [
-						"fgagomygram-production",
-						"up",
-						"railway",
-						"app"
+						"localhost"
 					],
+					"port": "8080",
 					"path": [
 						"users",
 						"register"
@@ -115,7 +499,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiYXJpZmlubkBnbWFpbC5jb20iLCJpZCI6NCwidXNlcm5hbWUiOiJhcmlmaW51cGRhdGUifQ.GRpE7fNzDO1ssTXm07j1avbIlD8VIXZ_eb1CYppEBQM",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiY2lwdW5nQGdtYWlsLmNvbSIsImlkIjoxLCJ1c2VybmFtZSI6ImNpcHVuZyJ9.RGxUkg_4L2nmj56dl9BB6PyM9TaxiOvxJo6dVFYb4BM",
 							"type": "string"
 						}
 					]
@@ -127,12 +511,12 @@
 					"urlencoded": [
 						{
 							"key": "email",
-							"value": "arifinn@gmail.com",
+							"value": "cipung@gmail.com",
 							"type": "text"
 						},
 						{
 							"key": "username",
-							"value": "arifinupdate2",
+							"value": "cipungupdate",
 							"type": "text"
 						}
 					]

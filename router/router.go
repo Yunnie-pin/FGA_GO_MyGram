@@ -42,6 +42,15 @@ func StartApp() *gin.Engine {
 			photoRouter.DELETE("/:photoId", middlewares.PhotoAuthorization(), controllers.PhotoDelete)
 		}
 
+		commentRouter := r.Group("/comments")
+		{
+			commentRouter.GET("/all", controllers.CommentGetAll)
+			commentRouter.GET("/", controllers.CommentGet)
+			commentRouter.POST("/", controllers.CommentCreate)
+			commentRouter.PUT("/:commentId", middlewares.CommentAuthorization(), controllers.CommentUpdate)
+			commentRouter.DELETE("/:commentId", middlewares.CommentAuthorization(), controllers.CommentDelete)
+		}
+
 		socialMediaRouter := r.Group("/socialmedias")
 		{
 			socialMediaRouter.POST("/", controllers.SocialMediaCreate)

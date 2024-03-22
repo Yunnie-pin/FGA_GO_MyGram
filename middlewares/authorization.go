@@ -72,3 +72,43 @@ func PhotoAuthorization() gin.HandlerFunc {
 		c.Next()
 	}
 }
+
+func CommentAuthorization() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		db := database.GetDB()
+
+		commentId, err := strconv.Atoi(c.Param("commentId"))
+
+		if err != nil {
+			c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{
+				"error":   "BAD REQUEST",
+				"message": "Invalid parameter",
+			})
+			return
+		}
+
+		userData := c.MustGet("userData").(jwt.MapClaims)
+		userID := uint(userData["id"].(float64))
+		Comment := models.Comment{}
+
+		err = db.Select("user_id").First(&Comment, uint(commentId)).Error
+
+		if err != nil {
+			c.AbortWithStatusJSON(http.StatusNotFound, gin.H{
+				"error":   "NOT FOUND",
+				"message": "comment not found",
+			})
+			return
+		}
+
+		if Comment.UserID != userID {
+			c.AbortWithStatusJSON(http.StatusForbidden, gin.H{
+				"error":   "FORBIDDEN",
+				"message": "You are not authorized",
+			})
+			return
+		}
+
+		c.Next()
+	}
+}

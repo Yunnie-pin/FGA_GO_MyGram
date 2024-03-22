@@ -113,7 +113,7 @@
                 </tr>
                 <tr>
                   <td>age</td>
-                  <td>string</td>
+                  <td>number</td>
                   <td>yes</td>
                   <td>umur harus diatas 8</td>
                 </tr>
@@ -191,127 +191,209 @@
             </li>
           </ul>
         </div>
-        <li>
-          <div>
-            <h2>Photos</h2>
-            <ul>
+      <li>
+        <div>
+          <h2>Photos</h2>
+          <ul>
 
-              <li>
-                <h3>Get All Photos</h3>
-                Route : <a href="/photos/all">/photos</a>
-                (<strong class="red">GET</strong>)
-                <p>
-                  Header : <strong class="green">Authorization</strong> (Bearer token)
-                </p>
-              </li>
+            <li>
+              <h3>Get All Photos</h3>
+              Route : <a href="/photos/all">/photos</a>
+              (<strong class="red">GET</strong>)
+              <p>
+                Header : <strong class="green">Authorization</strong> (Bearer token)
+              </p>
+            </li>
 
-              <li>
-                <h3>Get Photo By User ID</h3>
-                Route : <a href="/photos/">/photos/:photoId</a>
-                (<strong class="red">GET</strong>)
-                <p>
-                  Header : <strong class="green">Authorization</strong> (Bearer token)
-                </p>
-              </li>
+            <li>
+              <h3>Get Photo By User ID</h3>
+              Route : <a href="/photos/">/photos/:photoId</a>
+              (<strong class="red">GET</strong>)
+              <p>
+                Header : <strong class="green">Authorization</strong> (Bearer token)
+              </p>
+            </li>
 
-              <li>
-                <h3>Create Photo</h3>
-                Route : <a href="/photos">/photos</a>
-                (<strong class="red">POST</strong>)
-                <br>
-                <p>
-                  Header : <strong class="green">Authorization</strong> (Bearer token)
-                </p>
-                <p>Body :</p>
-                <table>
-                  <tr>
-                    <th>Field</th>
-                    <th>Type</th>
-                    <th>Required</th>
-                    <th>Notes</th>
-                  </tr>
-                  <tr>
-                    <td>title</td>
-                    <td>string</td>
-                    <td>yes</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>photo_url</td>
-                    <td>string</td>
-                    <td>yes</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>caption</td>
-                    <td>string</td>
-                    <td>no</td>
-                    <td></td>
-                  </tr>
+            <li>
+              <h3>Create Photo</h3>
+              Route : <a href="/photos">/photos</a>
+              (<strong class="red">POST</strong>)
+              <br>
+              <p>
+                Header : <strong class="green">Authorization</strong> (Bearer token)
+              </p>
+              <p>Body :</p>
+              <table>
+                <tr>
+                  <th>Field</th>
+                  <th>Type</th>
+                  <th>Required</th>
+                  <th>Notes</th>
+                </tr>
+                <tr>
+                  <td>title</td>
+                  <td>string</td>
+                  <td>yes</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>photo_url</td>
+                  <td>string</td>
+                  <td>yes</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>caption</td>
+                  <td>string</td>
+                  <td>no</td>
+                  <td></td>
+                </tr>
 
-                </table>
-              </li>
+              </table>
+            </li>
 
-              <li>
-                <h3>Update Photo</h3>
-                Route : <a href="/photos/">/photos/:photoId</a>
-                (<strong class="red">PUT</strong>)
-                <br>
-                <p>
-                  Header : <strong class="green">Authorization</strong> (Bearer token)
-                </p>
-                <p>Body :</p>
-                <table>
-                  <tr>
-                    <th>Field</th>
-                    <th>Type</th>
-                    <th>Required</th>
-                    <th>Notes</th>
-                  </tr>
-                  <tr>
-                    <td>title</td>
-                    <td>string</td>
-                    <td>yes</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>photo_url</td>
-                    <td>string</td>
-                    <td>yes</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>caption</td>
-                    <td>string</td>
-                    <td>no</td>
-                    <td></td>
-                  </tr>
+            <li>
+              <h3>Update Photo</h3>
+              Route : <a href="/photos/">/photos/:photoId</a>
+              (<strong class="red">PUT</strong>)
+              <br>
+              <p>
+                Header : <strong class="green">Authorization</strong> (Bearer token)
+              </p>
+              <p>Body :</p>
+              <table>
+                <tr>
+                  <th>Field</th>
+                  <th>Type</th>
+                  <th>Required</th>
+                  <th>Notes</th>
+                </tr>
+                <tr>
+                  <td>title</td>
+                  <td>string</td>
+                  <td>yes</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>photo_url</td>
+                  <td>string</td>
+                  <td>yes</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>caption</td>
+                  <td>string</td>
+                  <td>no</td>
+                  <td></td>
+                </tr>
 
-                </table>
-              </li>
+              </table>
+            </li>
+
+            <li>
+              <h3>Delete Photo</h3>
+              Route : <a href="/photos/">/photos/:photoId</a>
+              (<strong class="red">DELETE</strong>)
+              <p>
+                Header : <strong class="green">Authorization</strong> (Bearer token)
+              </p>
+            </li>
 
 
-              <li>
-                <h3>Delete Photo</h3>
-                Route : <a href="/photos/">/photos/:photoId</a>
-                (<strong class="red">DELETE</strong>)
-                <p>
-                  Header : <strong class="green">Authorization</strong> (Bearer token)
-                </p>
-              </li>
-              
-             
-            </ul>
-          </div>
-        </li>
+
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h2>Comments</h2>
+          <ul>
+            <!-- <li>
+              <h3>Get All Comments</h3>
+              Route : <a href="/comments/">/comments</a>
+              (<strong class="red">GET</strong>)
+              <p>
+                Header : <strong class="green">Authorization</strong> (Bearer token)
+              </p>
+            </li>
+
+            <li>
+              <h3>Get Comment By ID</h3>
+              Route : <a href="/comments/">/comments/:commentId</a>
+              (<strong class="red">GET</strong>)
+              <p>
+                Header : <strong class="green">Authorization</strong> (Bearer token)
+              </p>
+            </li> -->
+
+            <li>
+              <h3>Create Comment</h3>
+              Route : <a href="/comments/">/comments</a>
+              (<strong class="red">POST</strong>)
+              <br>
+              <p>
+                Header : <strong class="green">Authorization</strong> (Bearer token)
+              </p>
+              <p>Body :</p>
+              <table>
+                <tr>
+                  <th>Field</th>
+                  <th>Type</th>
+                  <th>Required</th>
+                  <th>Notes</th>
+                </tr>
+                <tr>
+                  <td>message</td>
+                  <td>string</td>
+                  <td>yes</td>  
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>photo_id</td>
+                  <td>number</td>
+                  <td>yes</td>
+                  <td></td>
+                </tr>
+              </table>
+            </li>
+
+            <li>
+              <h3>Update Comment</h3>
+              Route : <a href="/comments/">/comments/:commentId</a>
+              (<strong class="red">PUT</strong>)
+              <br>
+              <p>
+                Header : <strong class="green">Authorization</strong> (Bearer token)
+              </p>
+              <p>Body :</p>
+              <table>
+                <tr>
+                  <th>Field</th>
+                  <th>Type</th>
+                  <th>Required</th>
+                  <th>Notes</th>
+                </tr>
+                <tr>
+                  <td>message</td>
+                  <td>string</td>
+                  <td>yes</td>
+                  <td></td>
+                </tr>
+              </table>
+            </li>
+
+            <li>
+              <h3>Delete Comment</h3>
+              Route : <a href="/comments/">/comments/:commentId</a>
+              (<strong class="red">DELETE</strong>)
+              <p>
+                Header : <strong class="green">Authorization</strong> (Bearer token)
+              </p>
+            </li>
+
       </li>
     </ul>
   </main>
-
-
-
-  <!-- <p>Here you can share your photos with your friends and family.</p> -->
-  <!-- <p>Click <a href="/login">here</a> to login or <a href="/register">here</a> to register.</p> -->
 </body>
 
 </html>
