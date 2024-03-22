@@ -5,7 +5,8 @@ import (
 	"mygram/helpers"
 	"mygram/models"
 	"net/http"
-	"strconv"
+
+	// "strconv"
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
@@ -96,7 +97,7 @@ func UserUpdate(c *gin.Context) {
 	contentType := helpers.GetContentType(c)
 	User := models.User{}
 
-	userId, _ := strconv.Atoi(c.Param("userId"))
+	// userId, _ := strconv.Atoi(c.Param("userId"))
 
 	userID := uint(userData["id"].(float64))
 	userAge := uint8(userData["age"].(float64))
@@ -110,7 +111,7 @@ func UserUpdate(c *gin.Context) {
 	User.ID = userID
 	User.Age = uint8(userAge)
 
-	err := db.Debug().Model(&User).Where("id = ?", userId).Updates(models.User{
+	err := db.Debug().Model(&User).Where("id = ?", userID).Updates(models.User{
 		Username: User.Username,
 		Email:    User.Email,
 	}).Error
@@ -130,4 +131,28 @@ func UserUpdate(c *gin.Context) {
 		"age":        User.Age,
 		"updated_at": User.UpdatedAt,
 	})
+}
+
+func UserDelete(c *gin.Context) {
+	db := database.GetDB()
+
+	userData := c.MustGet("userData").(jwt.MapClaims)
+	User := models.User{}
+
+	userID := uint(userData["id"].(float64))
+
+	err := db.Debug().Where("id = ?", userID).Delete(&User).Error
+
+	if err != nil {
+		c.JSON(http.StatusNotFound, gin.H{
+			"error":   "NOT FOUND",
+			"message": err.Error(),
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"message": "Your account has been successfully deleted",
+	})
+
 }

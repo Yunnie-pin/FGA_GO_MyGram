@@ -27,8 +27,15 @@ func StartApp() *gin.Engine {
 		userRouter.POST("/register", controllers.UserRegister)
 		userRouter.POST("/login", controllers.UserLogin)
 		userRouter.Use(middlewares.Authentication())
-		userRouter.PUT("/:userId", middlewares.AuthMiddleware(), controllers.UserUpdate)
+
+		userRouter.PUT("/", middlewares.AuthMiddleware(), controllers.UserUpdate)
+		userRouter.DELETE("/", middlewares.AuthMiddleware(), controllers.UserDelete)
 	}
+
+	// socialMediaRouter := r.Group("/socialmedias")
+	// {
+	// 	socialMediaRouter.POST("/", controllers.SocialMediaCreate)
+	// }
 
 	return r
 }

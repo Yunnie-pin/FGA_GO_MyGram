@@ -11,6 +11,7 @@ Repository ini mengerjakan Final Project MyGram sebagai syarat mengikuti pelatih
 ## Tech Stack
 
 **Server:** Golang
+**Database:** Postgres
 
 
 ## Inisiasi
