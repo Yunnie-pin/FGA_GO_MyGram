@@ -1,18 +1,20 @@
 package models
 
 import (
+	"errors"
+
 	"github.com/asaskevich/govalidator"
 	"gorm.io/gorm"
 )
 
-type Socialmedia struct {
+type SocialMedia struct {
 	GormModel
 	Name           string `gorm:"not null" json:"name" form:"name" valid:"required~Nama social media harus diisi"`
 	SocialMediaURL string `gorm:"not null" json:"social_media_url" form:"social_media_url" valid:"required~URL social media harus diisi"`
 	UserID         uint   `gorm:"not null" json:"user_id"`
 }
 
-func (p *Socialmedia) BeforeCreate(tx *gorm.DB) (err error) {
+func (p *SocialMedia) BeforeCreate(tx *gorm.DB) (err error) {
 	_, errCreate := govalidator.ValidateStruct(p)
 
 	if errCreate != nil {
@@ -24,12 +26,14 @@ func (p *Socialmedia) BeforeCreate(tx *gorm.DB) (err error) {
 	return err
 }
 
-func (p *Socialmedia) BeforeUpdate(tx *gorm.DB) (err error) {
-	_, errUpdate := govalidator.ValidateStruct(p)
+func (p *SocialMedia) BeforeUpdate(tx *gorm.DB) (err error) {
 
-	if errUpdate != nil {
-		err = errUpdate
-		return err
+	if p.SocialMediaURL == "" {
+		return errors.New("URL SOCIAL MEDIA TIDAK BOLEH KOSONG")
+	}
+
+	if p.Name == "" {
+		return errors.New("NAMA SOCIAL MEDIA TIDAK BOLEH KOSONG")
 	}
 
 	err = nil

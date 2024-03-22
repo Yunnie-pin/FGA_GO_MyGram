@@ -59,9 +59,9 @@ func CommentCreate(c *gin.Context) {
 	userID := uint(userData["id"].(float64))
 
 	if contentType == appJSON {
-		c.BindJSON(&Comment)
+		c.ShouldBindJSON(&Comment)
 	} else {
-		c.Bind(&Comment)
+		c.ShouldBind(&Comment)
 	}
 
 	errPhoto := db.First(&Photo, Comment.PhotoID).Error
@@ -93,13 +93,15 @@ func CommentUpdate(c *gin.Context) {
 	userData := c.MustGet("userData").(jwt.MapClaims)
 	contentType := helpers.GetContentType(c)
 
+	commentID := c.Param("commentId")
+
 	Comment := models.Comment{}
 	userID := uint(userData["id"].(float64))
 
 	if contentType == appJSON {
-		c.BindJSON(&Comment)
+		c.ShouldBindJSON(&Comment)
 	} else {
-		c.Bind(&Comment)
+		c.ShouldBind(&Comment)
 	}
 
 	err := db.Model(&Comment).Where("id = ?", userID).Updates(
@@ -115,11 +117,16 @@ func CommentUpdate(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK,
-		gin.H{
-			"message": "successfully updated comment",
-		},
-	)
+	updatedComment := models.Comment{}
+	db.First(&updatedComment, commentID)
+
+	c.JSON(http.StatusOK, gin.H{
+		"id":         updatedComment.ID,
+		"message":    updatedComment.Message,
+		"photo_id":   updatedComment.PhotoID,
+		"updated_at": updatedComment.UpdatedAt,
+		"user_id":    updatedComment.UserID,
+	})
 
 }
 

@@ -35,8 +35,8 @@ func StartApp() *gin.Engine {
 
 		photoRouter := r.Group("/photos")
 		{
-			photoRouter.GET("/all", controllers.PhotoGetAll)
-			photoRouter.GET("/", controllers.PhotoGet)
+			photoRouter.GET("/all", controllers.PhotoGetAll) //TODO: Memperbaiki response success
+			photoRouter.GET("/", controllers.PhotoGet)       //TODO: Memperbaiki response success
 			photoRouter.POST("/", controllers.PhotoCreate)
 			photoRouter.PUT("/:photoId", middlewares.PhotoAuthorization(), controllers.PhotoUpdate)
 			photoRouter.DELETE("/:photoId", middlewares.PhotoAuthorization(), controllers.PhotoDelete)
@@ -44,8 +44,8 @@ func StartApp() *gin.Engine {
 
 		commentRouter := r.Group("/comments")
 		{
-			commentRouter.GET("/all", controllers.CommentGetAll)
-			commentRouter.GET("/", controllers.CommentGet)
+			commentRouter.GET("/all", controllers.CommentGetAll) //TODO: Memperbaiki response success
+			commentRouter.GET("/", controllers.CommentGet)       //TODO: Memperbaiki response success
 			commentRouter.POST("/", controllers.CommentCreate)
 			commentRouter.PUT("/:commentId", middlewares.CommentAuthorization(), controllers.CommentUpdate)
 			commentRouter.DELETE("/:commentId", middlewares.CommentAuthorization(), controllers.CommentDelete)
@@ -53,7 +53,11 @@ func StartApp() *gin.Engine {
 
 		socialMediaRouter := r.Group("/socialmedias")
 		{
+			socialMediaRouter.GET("/all", controllers.SocialMediaGetAll) //TODO: Memperbaiki response success
+			socialMediaRouter.GET("/", controllers.SocialMediaGet)       //TODO: Memperbaiki response success
 			socialMediaRouter.POST("/", controllers.SocialMediaCreate)
+			socialMediaRouter.PUT("/:socialMediaId", middlewares.SocialMediaAuthorization(), controllers.SocialMediaUpdate)
+			socialMediaRouter.DELETE("/:socialMediaId", middlewares.SocialMediaAuthorization(), controllers.SocialMediaDelete)
 		}
 	}
 	return r

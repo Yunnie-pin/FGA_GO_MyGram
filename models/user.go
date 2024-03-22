@@ -16,7 +16,7 @@ type User struct {
 	Password     string        `gorm:"not null" json:"password" form:"password" valid:"required~Password harus diisi,minstringlength(6)~Password minimal 6 karakter"`
 	Age          uint8         `gorm:"not null" json:"age" form:"age" valid:"required~Age harus diisi"`
 	Photos       []Photo       `gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;" json:"-"`
-	Socialmedias []Socialmedia `gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;" json:"-"`
+	Socialmedias []SocialMedia `gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;" json:"-"`
 	Comments     []Comment     `gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;" json:"-"`
 }
 

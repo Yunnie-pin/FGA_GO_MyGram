@@ -110,7 +110,10 @@ func PhotoUpdate(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, Photo)
+	updatedPhoto := models.Photo{}
+	db.First(&updatedPhoto, photoId)
+
+	c.JSON(http.StatusOK, updatedPhoto)
 }
 
 func PhotoDelete(c *gin.Context) {
@@ -135,4 +138,3 @@ func PhotoDelete(c *gin.Context) {
 		"message": "Your photo has been successfully deleted",
 	})
 }
-
