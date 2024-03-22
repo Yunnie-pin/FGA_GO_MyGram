@@ -35,7 +35,7 @@ func PhotoGet(c *gin.Context) {
 	Photos := []models.Photo{}
 	userID := uint(userData["id"].(float64))
 
-	err := db.Debug().Model(&models.Photo{}).Where("id = ?", userID).Find(&Photos).Error
+	err := db.Debug().Model(&models.Photo{}).Where("user_id = ?", userID).Find(&Photos).Error
 
 	if err != nil {
 		c.JSON(http.StatusNotFound, gin.H{

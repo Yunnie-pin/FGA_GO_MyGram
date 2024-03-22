@@ -29,28 +29,26 @@
 							"urlencoded": [
 								{
 									"key": "title",
-									"value": "Foto1",
+									"value": "Foto2",
 									"type": "text"
 								},
 								{
 									"key": "caption",
-									"value": "Ini foto 1",
+									"value": "Ini foto2",
 									"type": "text"
 								},
 								{
 									"key": "photo_url",
-									"value": "https://photo1.com",
+									"value": "https://photo2.com",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/photos",
-							"protocol": "http",
+							"raw": "{{base_url}}/photos",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8080",
 							"path": [
 								"photos"
 							]
@@ -66,7 +64,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiY2lwdW5nQGdtYWlsLmNvbSIsImlkIjoxLCJ1c2VybmFtZSI6ImNpcHVuZyJ9.RGxUkg_4L2nmj56dl9BB6PyM9TaxiOvxJo6dVFYb4BM",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiY2lwdW5nQGdtYWlsLmNvbSIsImlkIjoxLCJ1c2VybmFtZSI6ImNpcHVuZyJ9.tsdDmWrz2JqqP42QhPlET158SVJEUeNlCPYuKBiSi0g",
 									"type": "string"
 								}
 							]
@@ -74,12 +72,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/photos",
-							"protocol": "http",
+							"raw": "{{base_url}}/photos",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8080",
 							"path": [
 								"photos"
 							]
@@ -103,12 +99,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/photos/all",
-							"protocol": "http",
+							"raw": "{{base_url}}/photos/all",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8080",
 							"path": [
 								"photos",
 								"all"
@@ -125,7 +119,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiY2lwdW5nQGdtYWlsLmNvbSIsImlkIjoxLCJ1c2VybmFtZSI6ImNpcHVuZyJ9.RGxUkg_4L2nmj56dl9BB6PyM9TaxiOvxJo6dVFYb4BM",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiY2lwdW5nQGdtYWlsLmNvbSIsImlkIjoxLCJ1c2VybmFtZSI6ImNpcHVuZyJ9.tsdDmWrz2JqqP42QhPlET158SVJEUeNlCPYuKBiSi0g",
 									"type": "string"
 								}
 							]
@@ -133,12 +127,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/photos/1",
-							"protocol": "http",
+							"raw": "{{base_url}}/photos/1",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8080",
 							"path": [
 								"photos",
 								"1"
@@ -155,7 +147,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiY2lwdW5nQGdtYWlsLmNvbSIsImlkIjoxLCJ1c2VybmFtZSI6ImNpcHVuZyJ9.RGxUkg_4L2nmj56dl9BB6PyM9TaxiOvxJo6dVFYb4BM",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiY2lwdW5nQGdtYWlsLmNvbSIsImlkIjoxLCJ1c2VybmFtZSI6ImNpcHVuZyJ9.tsdDmWrz2JqqP42QhPlET158SVJEUeNlCPYuKBiSi0g",
 									"type": "string"
 								}
 							]
@@ -167,12 +159,12 @@
 							"urlencoded": [
 								{
 									"key": "title",
-									"value": "Foto1",
+									"value": "Foto1 update",
 									"type": "text"
 								},
 								{
 									"key": "caption",
-									"value": "Ini foto 1",
+									"value": "Ini foto 1 update",
 									"type": "text"
 								},
 								{
@@ -183,15 +175,13 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/photos/1",
-							"protocol": "http",
+							"raw": "{{base_url}}/photos/2",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8080",
 							"path": [
 								"photos",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -210,7 +200,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiY2lwdW5nQGdtYWlsLmNvbSIsImlkIjoxLCJ1c2VybmFtZSI6ImNpcHVuZyJ9.RGxUkg_4L2nmj56dl9BB6PyM9TaxiOvxJo6dVFYb4BM",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiY2lwdW5nQGdtYWlsLmNvbSIsImlkIjoxLCJ1c2VybmFtZSI6ImNpcHVuZyJ9.tsdDmWrz2JqqP42QhPlET158SVJEUeNlCPYuKBiSi0g",
 									"type": "string"
 								}
 							]
@@ -238,19 +228,17 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/comments?message=halo&photo_id=2",
-							"protocol": "http",
+							"raw": "{{base_url}}/comments?message=halo2&photo_id=2",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8080",
 							"path": [
 								"comments"
 							],
 							"query": [
 								{
 									"key": "message",
-									"value": "halo"
+									"value": "halo2"
 								},
 								{
 									"key": "photo_id",
@@ -269,7 +257,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiY2lwdW5nQGdtYWlsLmNvbSIsImlkIjoxLCJ1c2VybmFtZSI6ImNpcHVuZyJ9.RGxUkg_4L2nmj56dl9BB6PyM9TaxiOvxJo6dVFYb4BM",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiY2lwdW5nQGdtYWlsLmNvbSIsImlkIjoxLCJ1c2VybmFtZSI6ImNpcHVuZyJ9.tsdDmWrz2JqqP42QhPlET158SVJEUeNlCPYuKBiSi0g",
 									"type": "string"
 								}
 							]
@@ -277,14 +265,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/comments",
-							"protocol": "http",
+							"raw": "{{base_url}}/comments/all",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8080",
 							"path": [
-								"comments"
+								"comments",
+								"all"
 							]
 						}
 					},
@@ -298,7 +285,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiY2lwdW5nQGdtYWlsLmNvbSIsImlkIjoxLCJ1c2VybmFtZSI6ImNpcHVuZyJ9.RGxUkg_4L2nmj56dl9BB6PyM9TaxiOvxJo6dVFYb4BM",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiY2lwdW5nQGdtYWlsLmNvbSIsImlkIjoxLCJ1c2VybmFtZSI6ImNpcHVuZyJ9.tsdDmWrz2JqqP42QhPlET158SVJEUeNlCPYuKBiSi0g",
 									"type": "string"
 								}
 							]
@@ -306,12 +293,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/comments/all",
-							"protocol": "http",
+							"raw": "{{base_url}}/comments/all",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8080",
 							"path": [
 								"comments",
 								"all"
@@ -328,7 +313,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiY2lwdW5nQGdtYWlsLmNvbSIsImlkIjoxLCJ1c2VybmFtZSI6ImNpcHVuZyJ9.RGxUkg_4L2nmj56dl9BB6PyM9TaxiOvxJo6dVFYb4BM",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjgsImVtYWlsIjoiY2lwdW5nQGdtYWlsLmNvbSIsImlkIjoxLCJ1c2VybmFtZSI6ImNpcHVuZyJ9.tsdDmWrz2JqqP42QhPlET158SVJEUeNlCPYuKBiSi0g",
 									"type": "string"
 								}
 							]
@@ -346,12 +331,10 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/comments/2",
-							"protocol": "http",
+							"raw": "{{base_url}}/comments/2",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8080",
 							"path": [
 								"comments",
 								"2"
@@ -376,12 +359,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/comments/1",
-							"protocol": "http",
+							"raw": "{{base_url}}/comments/1",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8080",
 							"path": [
 								"comments",
 								"1"
@@ -426,12 +407,10 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/socialmedias",
-							"protocol": "http",
+							"raw": "{{base_url}}/socialmedias",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8080",
 							"path": [
 								"socialmedias"
 							]
@@ -455,12 +434,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/socialmedias/all",
-							"protocol": "http",
+							"raw": "{{base_url}}/socialmedias/all",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8080",
 							"path": [
 								"socialmedias",
 								"all"
@@ -485,12 +462,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/socialmedias/all",
-							"protocol": "http",
+							"raw": "{{base_url}}/socialmedias/all",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8080",
 							"path": [
 								"socialmedias",
 								"all"
@@ -530,12 +505,10 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/socialmedias/1",
-							"protocol": "http",
+							"raw": "{{base_url}}/socialmedias/1",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8080",
 							"path": [
 								"socialmedias",
 								"1"
@@ -545,7 +518,7 @@
 					"response": []
 				},
 				{
-					"name": "Update Social Media Copy",
+					"name": "Delete Social Media",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -564,12 +537,10 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "http://localhost:8080/socialmedias/1",
-							"protocol": "http",
+							"raw": "{{base_url}}/socialmedias/1",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8080",
 							"path": [
 								"socialmedias",
 								"1"
@@ -620,12 +591,10 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:8080/users/login",
-					"protocol": "http",
+					"raw": "{{base_url}}/users/login",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
 						"users",
 						"login"
@@ -665,12 +634,10 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:8080/users/register",
-					"protocol": "http",
+					"raw": "{{base_url}}/users/register",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
 						"users",
 						"register"
@@ -710,12 +677,10 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:8080/users",
-					"protocol": "http",
+					"raw": "{{base_url}}/users",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
 						"users"
 					]
@@ -739,12 +704,10 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/users",
-					"protocol": "http",
+					"raw": "{{base_url}}/users",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
 						"users"
 					]
