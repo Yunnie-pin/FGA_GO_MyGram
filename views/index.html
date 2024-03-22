@@ -191,6 +191,9 @@
             </li>
           </ul>
         </div>
+
+        <hr>
+        <!-- Photos -->
       <li>
         <div>
           <h2>Photos</h2>
@@ -304,6 +307,9 @@
           </ul>
         </div>
       </li>
+
+      <hr>
+      <!-- Comments -->
       <li>
         <div>
           <h2>Comments</h2>
@@ -345,7 +351,7 @@
                 <tr>
                   <td>message</td>
                   <td>string</td>
-                  <td>yes</td>  
+                  <td>yes</td>
                   <td></td>
                 </tr>
                 <tr>
@@ -390,8 +396,107 @@
                 Header : <strong class="green">Authorization</strong> (Bearer token)
               </p>
             </li>
-
+          </ul>
       </li>
+
+        <!-- socialmedia -->
+        <hr>
+        <li>
+          <div>
+            <h2>Social Media</h2>
+            <ul>
+              <li>
+                <h3>Get All Social Media</h3>
+                Route : <a href="/socialmedias/">/socialmedias/all</a>
+                (<strong class="red">GET</strong>)
+                <p>
+                  Header : <strong class="green">Authorization</strong> (Bearer token)
+                </p>
+              </li>
+  
+              <li>
+                <h3>Get Social Media By User</h3>
+                Route : <a href="/socialmedias/">/socialmedias</a>
+                (<strong class="red">GET</strong>)
+                <p>
+                  Header : <strong class="green">Authorization</strong> (Bearer token)
+                </p>
+              </li>
+  
+              <li>
+                <h3>Create Comment</h3>
+                Route : <a href="/socialmedias/">/socialmedias</a>
+                (<strong class="red">POST</strong>)
+                <br>
+                <p>
+                  Header : <strong class="green">Authorization</strong> (Bearer token)
+                </p>
+                <p>Body :</p>
+                <table>
+                  <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Required</th>
+                    <th>Notes</th>
+                  </tr>
+                  <tr>
+                    <td>name</td>
+                    <td>string</td>
+                    <td>yes</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>social_media_url</td>
+                    <td>string</td>
+                    <td>yes</td>
+                    <td></td>
+                  </tr>
+                </table>
+              </li>
+  
+              <li>
+                <h3>Update Comment</h3>
+                Route : <a href="/socialmedias/">/socialmedias/:socialMediaId</a>
+                (<strong class="red">PUT</strong>)
+                <br>
+                <p>
+                  Header : <strong class="green">Authorization</strong> (Bearer token)
+                </p>
+                <p>Body :</p>
+                <table>
+                  <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Required</th>
+                    <th>Notes</th>
+                  </tr>
+                  <tr>
+                    <td>name</td>
+                    <td>string</td>
+                    <td>yes</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>social_media_url</td>
+                    <td>string</td>
+                    <td>yes</td>
+                    <td></td>
+                  </tr>
+                </table>
+              </li>
+  
+              <li>
+                <h3>Delete Social Medias</h3>
+                Route : <a href="/socialmedias/">/socialmedias/:socialMediaId</a>
+                (<strong class="red">DELETE</strong>)
+                <p>
+                  Header : <strong class="green">Authorization</strong> (Bearer token)
+                </p>
+              </li>
+            </ul>
+        </li>
+
+    
     </ul>
   </main>
 </body>
