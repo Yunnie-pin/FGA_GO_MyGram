@@ -22,20 +22,30 @@ func StartApp() *gin.Engine {
 	})
 
 	//api
-	userRouter := r.Group("/users")
+	guestRouter := r.Group("/users")
 	{
-		userRouter.POST("/register", controllers.UserRegister)
-		userRouter.POST("/login", controllers.UserLogin)
-		userRouter.Use(middlewares.Authentication())
-
-		userRouter.PUT("/", middlewares.AuthMiddleware(), controllers.UserUpdate)
-		userRouter.DELETE("/", middlewares.AuthMiddleware(), controllers.UserDelete)
+		guestRouter.POST("/register", controllers.UserRegister)
+		guestRouter.POST("/login", controllers.UserLogin)
 	}
 
-	// socialMediaRouter := r.Group("/socialmedias")
-	// {
-	// 	socialMediaRouter.POST("/", controllers.SocialMediaCreate)
-	// }
+	userRouter := r.Use(middlewares.Authentication())
+	{
+		userRouter.PUT("/users", middlewares.UserAuthorization(), controllers.UserUpdate)
+		userRouter.DELETE("/users", middlewares.UserAuthorization(), controllers.UserDelete)
 
+		photoRouter := r.Group("/photos")
+		{
+			photoRouter.GET("/all", controllers.PhotoGetAll)
+			photoRouter.GET("/", controllers.PhotoGet)
+			photoRouter.POST("/", controllers.PhotoCreate)
+			photoRouter.PUT("/:photoId", middlewares.PhotoAuthorization(), controllers.PhotoUpdate)
+			photoRouter.DELETE("/:photoId", middlewares.PhotoAuthorization(), controllers.PhotoDelete)
+		}
+
+		socialMediaRouter := r.Group("/socialmedias")
+		{
+			socialMediaRouter.POST("/", controllers.SocialMediaCreate)
+		}
+	}
 	return r
 }

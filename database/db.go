@@ -45,7 +45,7 @@ func StartDB() {
 	}
 
 	fmt.Println("Successfully connected to the database!")
-	db.Debug().AutoMigrate(&models.User{})
+	db.Debug().AutoMigrate(&models.User{}, models.Photo{}, models.Socialmedia{}, models.Comment{})
 }
 
 func GetDB() *gorm.DB {
